@@ -1,0 +1,15 @@
+<ng-container *ngIf="isAutorized(); else notAuthorized">
+  <div class="dx-field" style="text-align: center;">
+    <dx-button
+      type="default"
+      text="Log Out"
+      (onClick)="onLogOutClick($event)"
+      width="100px"
+    ></dx-button>
+  </div>
+  <router-outlet></router-outlet>
+</ng-container>
+
+<ng-template #notAuthorized>
+  <router-outlet></router-outlet>
+</ng-template>

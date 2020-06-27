@@ -1,0 +1,34 @@
+<div class="container">
+  <dx-data-grid
+    id="gridContainer"
+    [dataSource]="dataSource"
+    keyExpr="Id"
+    [showBorders]="true"
+  >
+    <dxo-paging [enabled]="false"></dxo-paging>
+    <dxo-editing
+      mode="popup"
+      [allowAdding]="true"
+      [allowUpdating]="true"
+      [allowDeleting]="true"
+      [useIcons]="true"
+    >
+      <dxo-popup
+        title="To Do"
+        [showTitle]="true"
+        [maxWidth]="700"
+        [maxHeight]="525"
+        [position]="{ my: 'top', at: 'top', of: window }"
+      >
+      </dxo-popup>
+    </dxo-editing>
+
+    <dxi-column dataField="Do"></dxi-column>
+    <dxi-column dataField="Date" dataType="date"> </dxi-column>
+
+    <dxi-column dataField="StatusId" caption="Status" [width]="125">
+      <dxo-lookup [dataSource]="status" displayExpr="Name" valueExpr="Id">
+      </dxo-lookup>
+    </dxi-column>
+  </dx-data-grid>
+</div>

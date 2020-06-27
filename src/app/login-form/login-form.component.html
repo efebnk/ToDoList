@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="login-header">
+    <div class="title">{{ appInfo.title }}</div>
+    <div>Sign In to your account</div>
+  </div>
+  <div class="dx-field">
+    <dx-text-box [(value)]="model.username" placeholder="Login" width="100%">
+    </dx-text-box>
+  </div>
+  <div class="dx-field">
+    <dx-text-box
+      mode="password"
+      [(value)]="model.password"
+      placeholder="Password"
+      width="100%"
+    >
+    </dx-text-box>
+  </div>
+  <div class="dx-field">
+    <dx-button
+      type="default"
+      text="Login"
+      (onClick)="onLoginClick($event)"
+      width="100%"
+    ></dx-button>
+  </div>
+</div>
